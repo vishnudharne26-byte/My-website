@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pardhi Samaj – Chandrapur | अध्यक्ष: विष्णू धार्णे</title>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ===== SPLASH ===== -->
+<div id="splash">
+  <div class="splash-logo">
+    <div class="circle-outer">
+      <div class="circle-inner">🦅</div>
+    </div>
+  </div>
+  <div class="splash-title" id="splashTitle">Pardhi Samaj</div>
+  <div class="splash-sub" id="splashSub">Pardhi Samaj – Chandrapur District</div>
+  <div class="splash-name" id="splashName">President: Vishnu Dharne | विष्णू धार्णे</div>
+  <div class="splash-tagline">Select Your Language • भाषा निवडा</div>
+  <div class="lang-pick">
+    <div class="lang-card" onclick="startApp('en')">
+      <div class="lc-flag">🇮🇳</div>
+      <div class="lc-name">English</div>
+      <div class="lc-eng">Continue in English</div>
+    </div>
+    <div class="lang-card" onclick="startApp('mr')">
+      <div class="lc-flag">🏵️</div>
+      <div class="lc-name">मराठी</div>
+      <div class="lc-eng">मराठीत सुरू करा</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAIN APP ===== -->
+<div id="app">
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-label" id="tickerLabel">📢 LIVE UPDATES</div>
+    <div class="ticker-track">
+      <div class="ticker-inner" id="tickerInner">
+        <span class="ticker-item">Samaj Meeting – Chandrapur Zilla on Jun 10, 2026 at Tribal Bhavan</span>
+        <span class="ticker-item">PMAY-G Free Housing Applications Open – Apply Now</span>
+        <span class="ticker-item">Post-Matric Scholarship 2026-27 – Deadline July 31</span>
+        <span class="ticker-item">Emergency Session on Highway Displacement – Jun 25, 6PM</span>
+        <span class="ticker-item">Youth Leaders Summit – Jun 18 at District Hall</span>
+        <span class="ticker-item">Helpline: 24/7 Legal Aid for SC/ST Atrocities</span>
+        <!-- duplicate for seamless scroll -->
+        <span class="ticker-item">Samaj Meeting – Chandrapur Zilla on Jun 10, 2026 at Tribal Bhavan</span>
+        <span class="ticker-item">PMAY-G Free Housing Applications Open – Apply Now</span>
+        <span class="ticker-item">Post-Matric Scholarship 2026-27 – Deadline July 31</span>
+        <span class="ticker-item">Emergency Session on Highway Displacement – Jun 25, 6PM</span>
+        <span class="ticker-item">Youth Leaders Summit – Jun 18 at District Hall</span>
+        <span class="ticker-item">Helpline: 24/7 Legal Aid for SC/ST Atrocities</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP COLOR BAR -->
+  <div class="topbar"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand" onclick="showSection('home')">
+      <div class="nav-logo">🦅</div>
+      <div>
+        <div class="nav-brand-text" id="navBrand">Pardhi Samaj</div>
+        <div class="nav-brand-sub" id="navSub">Chandrapur Dist.</div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-menu">
+        <li><button onclick="showSection('home')" class="active" id="nav-home">🏠 Home</button></li>
+        <li><button onclick="showSection('notices')" id="nav-notices">📢 Notices</button></li>
+        <li><button onclick="showSection('vote')" id="nav-vote">🗳️ Vote</button></li>
+        <li><button onclick="showSection('meetings')" id="nav-meetings">🤝 Meetings</button></li>
+        <li><button onclick="showSection('programs')" id="nav-programs">📋 Programs</button></li>
+        <li><button onclick="showSection('join')" id="nav-join">✅ Join</button></li>
+      </ul>
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">मर / EN</button>
+      <button class="nav-login-btn" onclick="openModal('loginModal')" id="navLoginBtn">🔐 Login</button>
+      <button class="hamburger" onclick="openDrawer()">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-backdrop" onclick="closeDrawer()"></div>
+    <div class="drawer-panel">
+      <button class="drawer-close" onclick="closeDrawer()">✕</button>
+      <button class="drawer-item active" onclick="showSection('home');closeDrawer()">🏠 Home</button>
+      <button class="drawer-item" onclick="showSection('notices');closeDrawer()">📢 Notices</button>
+      <button class="drawer-item" onclick="showSection('vote');closeDrawer()">🗳️ Vote</button>
+      <button class="drawer-item" onclick="showSection('meetings');closeDrawer()">🤝 Meetings</button>
+      <button class="drawer-item" onclick="showSection('programs');closeDrawer()">📋 Programs</button>
+      <button class="drawer-item" onclick="showSection('join');closeDrawer()">✅ Join</button>
+      <div class="drawer-div"></div>
+      <button class="drawer-item" onclick="openModal('loginModal');closeDrawer()">🔐 Login / OTP</button>
+      <button class="drawer-item" onclick="toggleLang()">🌐 Language Toggle</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eagle-bg">🦅</div>
+    <div class="hero-badge" id="heroBadge">🦅 Official Portal – Chandrapur District</div>
+    <h1 id="heroH1">Pardhi Samaj <span class="accent" id="heroH2">Chandrapur</span></h1>
+    <div class="hero-devanagari" id="heroDeva">एकता • हक्क • प्रगती</div>
+    <div class="hero-slogan">
+      <div class="hero-slogan-item">⚖️ <span id="slog1">Justice</span></div>
+      <div class="hero-slogan-item">🎓 <span id="slog2">Education</span></div>
+      <div class="hero-slogan-item">🏡 <span id="slog3">Housing</span></div>
+      <div class="hero-slogan-item">💼 <span id="slog4">Employment</span></div>
+    </div>
+    <div class="hero-president">
+      <div class="hero-pres-avatar">👤</div>
+      <div class="hero-pres-info">
+        <div class="hero-pres-role" id="presRole">President / अध्यक्ष</div>
+        <div class="hero-pres-name">विष्णू धार्णे · Vishnu Dharne</div>
+      </div>
+    </div>
+    <p class="hero-desc" id="heroP">The official digital platform of Pardhi Samaj, Chandrapur District. Participate in community decisions, access government programs, and stay connected.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showSection('vote')" id="heroBtn1">🗳️ Vote Now</button>
+      <button class="btn-whatsapp" onclick="openWhatsApp()">💬 WhatsApp Group</button>
+      <button class="btn-outline" onclick="showSection('join')" id="heroBtn3">✅ Join Samaj</button>
+    </div>
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-icon">👥</div><div class="stat-num" id="countMembers">0</div><div class="stat-sub" id="stat1">Members</div></div>
+      <div class="stat-item"><div class="stat-icon">🗳️</div><div class="stat-num" id="countPolls">0</div><div class="stat-sub" id="stat2">Active Polls</div></div>
+      <div class="stat-item"><div class="stat-icon">🤝</div><div class="stat-num" id="countMtg">0</div><div class="stat-sub" id="stat3">Meetings/Year</div></div>
+      <div class="stat-item"><div class="stat-icon">🏛️</div><div class="stat-num">1</div><div class="stat-sub" id="stat4">District</div></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showSection('home')" id="tab-home">🏠 <span id="tHome">Home</span></button>
+      <button class="tab-btn" onclick="showSection('notices')" id="tab-notices">📢 <span id="tNotices">Notices</span></button>
+      <button class="tab-btn" onclick="showSection('vote')" id="tab-vote">🗳️ <span id="tVote">Vote</span></button>
+      <button class="tab-btn" onclick="showSection('meetings')" id="tab-meetings">🤝 <span id="tMeetings">Meetings</span></button>
+      <button class="tab-btn" onclick="showSection('programs')" id="tab-programs">📋 <span id="tPrograms">Programs</span></button>
+      <button class="tab-btn" onclick="showSection('join')" id="tab-join">✅ <span id="tJoin">Join</span></button>
+    </div>
+
+    <!-- ============ HOME ============ -->
+    <div class="section active" id="sec-home">
+      <!-- Quick Action Buttons -->
+      <div class="quick-actions">
+        <div class="qa-btn" onclick="showSection('vote')">
+          <div class="qa-icon">🗳️</div>
+          <div class="qa-label" id="qa1">Vote Now</div>
+          <div class="qa-sublabel">3 Active Polls</div>
+        </div>
+        <div class="qa-btn" onclick="showSection('programs')">
+          <div class="qa-icon">📋</div>
+          <div class="qa-label" id="qa2">Govt Schemes</div>
+          <div class="qa-sublabel">6 Programs</div>
+        </div>
+        <div class="qa-btn" onclick="openModal('loginModal')">
+          <div class="qa-icon">🔐</div>
+          <div class="qa-label" id="qa3">Member Login</div>
+          <div class="qa-sublabel">OTP Login</div>
+        </div>
+        <div class="qa-btn" onclick="openWhatsApp()">
+          <div class="qa-icon">💬</div>
+          <div class="qa-label" id="qa4">WhatsApp</div>
+          <div class="qa-sublabel">Join Group</div>
+        </div>
+        <div class="qa-btn" onclick="showSection('meetings')">
+          <div class="qa-icon">🤝</div>
+          <div class="qa-label" id="qa5">Meetings</div>
+          <div class="qa-sublabel">4 Upcoming</div>
+        </div>
+        <div class="qa-btn" onclick="callHelpline()">
+          <div class="qa-icon">📞</div>
+          <div class="qa-label" id="qa6">Helpline</div>
+          <div class="qa-sublabel">24/7 Legal Aid</div>
+        </div>
+      </div>
+
+      <!-- Notice Board -->
+      <div class="notice-board">
+        <div class="notice-board-head">
+          <h3><div class="live-dot"></div> <span id="noticeBoardTitle">Latest from President</span></h3>
+          <button class="card-btn-outline" onclick="showSection('notices')">View All →</button>
+        </div>
+        <div class="notice-list" id="homeNoticeList">
+          <div class="notice-item">
+            <div class="notice-item-left">
+              <h4><span class="notice-type-badge nb-meeting">Meeting</span><span id="hn1t">Samaj Meeting – Jun 10, Chandrapur</span></h4>
+              <p id="hn1d">Monthly gram sabha at Chandrapur Tribal Bhavan. All members invited.</p>
+            </div>
+            <div class="notice-date">Jun 5, 2026</div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-item-left">
+              <h4><span class="notice-type-badge nb-notice">Notice</span><span id="hn2t">PMAY-G Application Drive Open</span></h4>
+              <p id="hn2d">Free housing application camp at Chandrapur District Office. ST certificates required.</p>
+            </div>
+            <div class="notice-date">Jun 3, 2026</div>
+          </div>
+          <div class="notice-item">
+            <div class="notice-item-left">
+              <h4><span class="notice-type-badge nb-program">Program</span><span id="hn3t">Scholarship Registration 2026-27 Open</span></h4>
+              <p id="hn3d">Post-matric scholarship applications are now open. Apply before July 31.</p>
+            </div>
+            <div class="notice-date">Jun 1, 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Cards -->
+      <div class="grid3">
+        <div class="card">
+          <div class="card-tag tag-vote" id="qcTag1">Active Poll</div>
+          <h3 id="qcTitle1">Vote on Welfare Board</h3>
+          <p id="qcDesc1">Demand for a separate Pardhi Welfare Board in Maharashtra is live for voting.</p>
+          <button class="card-btn" onclick="showSection('vote')" id="qcBtn1">Vote Now →</button>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-meeting" id="qcTag2">Upcoming</div>
+          <h3 id="qcTitle2">Gram Sabha – Forest Rights</h3>
+          <p id="qcDesc2">Monthly gram sabha focused on Forest Rights Act claims in Chandrapur district.</p>
+          <button class="card-btn" onclick="showSection('meetings')" id="qcBtn2">Register →</button>
+        </div>
+        <div class="card">
+          <div class="card-tag tag-prog" id="qcTag3">Program</div>
+          <h3 id="qcTitle3">Pardhi Skill Development</h3>
+          <p id="qcDesc3">Free skill training in tailoring, plumbing and electronics for youth aged 18–35.</p>
+          <button class="card-btn" onclick="showSection('programs')" id="qcBtn3">Apply →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ NOTICES ============ -->
+    <div class="section" id="sec-notices">
+      <div class="sec-head">
+        <div class="ico" style="background:rgba(255,107,0,0.15)">📢</div>
+        <div>
+          <h2 id="noticesTitle">Official Notices</h2>
+          <p id="noticesSub">All announcements from President Vishnu Dharne</p>
+        </div>
+      </div>
+
+      <!-- President Dashboard (shown if logged in as president) -->
+      <div id="presDash" style="display:none;">
+        <div class="pres-dash">
+          <div class="pres-dash-head">
+            <div class="pres-dash-avatar">👑</div>
+            <div class="pres-dash-info">
+              <h3>विष्णू धार्णे</h3>
+              <p id="presDashRole">🏆 President, Pardhi Samaj – Chandrapur</p>
+            </div>
+          </div>
+          <div class="pres-actions">
+            <button class="pres-action-btn primary" onclick="toggleUploadPanel()" id="presAddNoticeBtn">📤 Post New Notice</button>
+            <button class="pres-action-btn" onclick="showToast('⚙️ Settings coming soon')">⚙️ Settings</button>
+            <button class="pres-action-btn" onclick="logoutPres()">🔓 Logout</button>
+          </div>
+        </div>
+        <div class="upload-panel" id="uploadPanel">
+          <h3 id="uploadTitle2">Post New Announcement</h3>
+          <div class="type-select-row">
+            <button class="type-select-btn selected" onclick="selectType(this,'notice')">📢 Notice</button>
+            <button class="type-select-btn" onclick="selectType(this,'meeting')">🤝 Meeting</button>
+            <button class="type-select-btn" onclick="selectType(this,'program')">📋 Program</button>
+          </div>
+          <div class="form-field"><label id="ufTitle">Title</label><input type="text" id="uploadTitle" placeholder="Enter announcement title..."/></div>
+          <div class="form-field"><label id="ufDesc">Description</label><textarea id="uploadDesc" rows="3" placeholder="Enter details..."></textarea></div>
+          <div class="form-row">
+            <div class="form-field"><label id="ufDate">Date</label><input type="date" id="uploadDate"/></div>
+            <div class="form-field"><label id="ufLoc">Location</label><input type="text" id="uploadLoc" placeholder="e.g. Tribal Bhavan, Chandrapur"/></div>
+          </div>
+          <button class="card-btn" onclick="postAnnouncement()" id="ufPost">📤 Post Announcement</button>
+        </div>
+      </div>
+
+      <div class="notice-board">
+        <div class="notice-board-head">
+          <h3><div class="live-dot"></div> <span id="allNoticesTitle">All Notices & Announcements</span></h3>
+        </div>
+        <div class="notice-list" id="allNoticesList"></div>
+      </div>
+    </div>
+
+    <!-- ============ VOTE ============ -->
+    <div class="section" id="sec-vote">
+      <div class="sec-head">
+        <div class="ico" style="background:rgba(21,101,192,0.2)">🗳️</div>
+        <div>
+          <h2 id="voteTitle">Samaj Voting</h2>
+          <p id="voteSub">Registered members only. Login with OTP to vote.</p>
+        </div>
+      </div>
+
+      <div id="voteGate" class="vote-gate">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🔐</div>
+        <h3 style="font-family:'Yatra One',cursive;color:var(--gold);font-size:1.3rem;margin-bottom:10px;" id="voteGateMsg">Login to Vote</h3>
+        <p style="color:var(--muted);font-size:0.87rem;margin-bottom:22px;" id="voteGateDesc">Login with your registered mobile number to access voting.</p>
+        <button class="btn-primary" onclick="openModal('loginModal')" id="voteGateBtn">Login with OTP</button>
+      </div>
+
+      <div id="voteContent" style="display:none;">
+        <!-- Poll 1 -->
+        <div class="poll-card">
+          <div class="card-tag tag-vote" id="poll1Tag">Active Poll</div>
+          <h3 id="poll1Q">Should a separate Pardhi Welfare Board be demanded in Maharashtra?</h3>
+          <div class="poll-meta">
+            <span class="voters">👥 1,240 <span id="poll1Meta">votes · Closes June 5, 2026</span></span>
+          </div>
+          <div class="poll-options" id="poll1-opts">
+            <div class="poll-option" onclick="selectOpt('poll1',0)">
+              <input type="radio" name="poll1" id="poll1-0"/><label for="poll1-0" id="p1o0">Yes, full support</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:72%"></div></div>
+              <span class="poll-pct">72%</span>
+            </div>
+            <div class="poll-option" onclick="selectOpt('poll1',1)">
+              <input type="radio" name="poll1" id="poll1-1"/><label for="poll1-1" id="p1o1">Maybe, needs discussion</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:18%"></div></div>
+              <span class="poll-pct">18%</span>
+            </div>
+            <div class="poll-option" onclick="selectOpt('poll1',2)">
+              <input type="radio" name="poll1" id="poll1-2"/><label for="poll1-2" id="p1o2">Not now</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:10%"></div></div>
+              <span class="poll-pct">10%</span>
+            </div>
+          </div>
+          <button class="submit-vote-btn" id="poll1-btn" onclick="submitVote('poll1')" data-t="vote_submit">Submit Vote</button>
+        </div>
+
+        <!-- Poll 2 -->
+        <div class="poll-card">
+          <div class="card-tag tag-vote" id="poll2Tag">Active Poll</div>
+          <h3 id="poll2Q">Priority for next Gram Sabha: Land Rights or Education?</h3>
+          <div class="poll-meta">👥 876 <span id="poll2Meta">votes · Closes June 12, 2026</span></div>
+          <div class="poll-options" id="poll2-opts">
+            <div class="poll-option" onclick="selectOpt('poll2',0)">
+              <input type="radio" name="poll2" id="poll2-0"/><label for="poll2-0" id="p2o0">Land & Forest Rights</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:61%"></div></div>
+              <span class="poll-pct">61%</span>
+            </div>
+            <div class="poll-option" onclick="selectOpt('poll2',1)">
+              <input type="radio" name="poll2" id="poll2-1"/><label for="poll2-1" id="p2o1">Education & Scholarships</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:39%"></div></div>
+              <span class="poll-pct">39%</span>
+            </div>
+          </div>
+          <button class="submit-vote-btn" id="poll2-btn" onclick="submitVote('poll2')" data-t="vote_submit">Submit Vote</button>
+        </div>
+
+        <!-- Poll 3 Urgent -->
+        <div class="poll-card" style="border-color:rgba(183,28,28,0.3);">
+          <div class="card-tag tag-urgent" id="poll3Tag">🚨 Urgent Poll</div>
+          <h3 id="poll3Q">Petition against highway project threatening Chandrapur Pardhi Wadi?</h3>
+          <div class="poll-meta">👥 2,018 <span id="poll3Meta">votes · Closes May 31, 2026</span></div>
+          <div class="poll-options" id="poll3-opts">
+            <div class="poll-option" onclick="selectOpt('poll3',0)">
+              <input type="radio" name="poll3" id="poll3-0"/><label for="poll3-0" id="p3o0">Yes – Approve Petition</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:89%"></div></div>
+              <span class="poll-pct">89%</span>
+            </div>
+            <div class="poll-option" onclick="selectOpt('poll3',1)">
+              <input type="radio" name="poll3" id="poll3-1"/><label for="poll3-1" id="p3o1">No – Reject Petition</label>
+              <div class="poll-bar-wrap"><div class="poll-bar" style="width:11%"></div></div>
+              <span class="poll-pct">11%</span>
+            </div>
+          </div>
+          <button class="submit-vote-btn" id="poll3-btn" onclick="submitVote('poll3')" data-t="vote_submit">Submit Vote</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ MEETINGS ============ -->
+    <div class="section" id="sec-meetings">
+      <div class="sec-head">
+        <div class="ico" style="background:rgba(240,165,0,0.15)">🤝</div>
+        <div>
+          <h2 id="mtgTitle">Samaj Meetings</h2>
+          <p id="mtgSub">Upcoming gram sabhas & community meetings – Chandrapur District</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="meeting-card">
+          <div class="meeting-date-box"><div class="mtg-day">10</div><div class="mtg-month">Jun</div></div>
+          <div class="meeting-info">
+            <div class="card-tag tag-meeting">Gram Sabha</div>
+            <h3 id="mtg1Title">Gram Sabha – Forest Land Rights Discussion</h3>
+            <p id="mtg1Desc">Monthly gram sabha focused on Forest Rights Act claims in Chandrapur district. All wadi representatives invited.</p>
+            <div class="mtg-tags">
+              <span class="mtg-tag">📍 Tribal Bhavan, Chandrapur</span>
+              <span class="mtg-tag">⏰ 10:00 AM</span>
+              <span class="mtg-tag">👥 Open to All</span>
+            </div>
+            <button class="card-btn" onclick="showToast('✅ RSVP registered! Reminder will be sent to your mobile.')">✅ Register RSVP</button>
+          </div>
+        </div>
+        <div class="meeting-card">
+          <div class="meeting-date-box"><div class="mtg-day">18</div><div class="mtg-month">Jun</div></div>
+          <div class="meeting-info">
+            <div class="card-tag tag-meeting">Youth Summit</div>
+            <h3 id="mtg2Title">Youth Leaders Summit – Chandrapur</h3>
+            <p id="mtg2Desc">Youth leadership gathering to discuss education, employment and skill development opportunities under NTDP for Pardhi youth.</p>
+            <div class="mtg-tags">
+              <span class="mtg-tag">📍 Chandrapur District Hall</span>
+              <span class="mtg-tag">⏰ 11:00 AM</span>
+              <span class="mtg-tag">👥 Age 18–35</span>
+            </div>
+            <button class="card-btn" onclick="showToast('✅ RSVP registered! Reminder will be sent to your mobile.')">✅ Register RSVP</button>
+          </div>
+        </div>
+        <div class="meeting-card" style="border-color:rgba(183,28,28,0.3);">
+          <div class="meeting-date-box" style="background:linear-gradient(135deg,#B71C1C,#D32F2F);"><div class="mtg-day">25</div><div class="mtg-month">Jun</div></div>
+          <div class="meeting-info">
+            <div class="card-tag tag-urgent">🚨 Emergency</div>
+            <h3 id="mtg3Title">Emergency Session – Displacement Case, Chandrapur</h3>
+            <p id="mtg3Desc">Emergency session on proposed highway project threatening Pardhi Wadi in Chandrapur. Legal team will present options.</p>
+            <div class="mtg-tags">
+              <span class="mtg-tag">📍 Online + Chandrapur Zilla Parishad</span>
+              <span class="mtg-tag">⏰ 6:00 PM</span>
+              <span class="mtg-tag">🚨 Urgent</span>
+            </div>
+            <button class="card-btn" onclick="showToast('✅ RSVP registered! Reminder will be sent to your mobile.')">✅ Register RSVP</button>
+          </div>
+        </div>
+        <div class="meeting-card">
+          <div class="meeting-date-box"><div class="mtg-day">5</div><div class="mtg-month">Jul</div></div>
+          <div class="meeting-info">
+            <div class="card-tag tag-meeting">Annual Meeting</div>
+            <h3 id="mtg4Title">Annual Samaj Mahasabha – Chandrapur</h3>
+            <p id="mtg4Desc">Annual general assembly of all Pardhi Samaj members. Report on 2025-26 activities, election of sub-committees and planning for 2026-27.</p>
+            <div class="mtg-tags">
+              <span class="mtg-tag">📍 Chandrapur Sports Complex</span>
+              <span class="mtg-tag">⏰ 9:00 AM</span>
+              <span class="mtg-tag">👥 All Members</span>
+            </div>
+            <button class="card-btn" onclick="showToast('✅ RSVP registered! Reminder will be sent to your mobile.')">✅ Register RSVP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PROGRAMS ============ -->
+    <div class="section" id="sec-programs">
+      <div class="sec-head">
+        <div class="ico" style="background:rgba(64,145,108,0.2)">📋</div>
+        <div>
+          <h2 id="progTitle">Government Programs & Yojanas</h2>
+          <p id="progSub">Available schemes for Pardhi ST community – Chandrapur</p>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="prog-card">
+          <div class="prog-status ps-active">✅ Active</div>
+          <div class="card-tag tag-prog">Education</div>
+          <h3>Post-Matric Scholarship – ST Students</h3>
+          <p>Full fee waiver and stipend for degree and above ST students under Maharashtra government scheme. Chandrapur District nodal office: Tribals Dept.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">3,200</div><div class="psi-label">Beneficiaries</div></div>
+            <div class="prog-stat-item"><div class="psi-num">800</div><div class="psi-label">Remaining</div></div>
+          </div>
+          <button class="card-btn" onclick="showToast('✅ Application submitted! Our coordinator will contact you within 3–5 days.')">Apply Now →</button>
+        </div>
+        <div class="prog-card">
+          <div class="prog-status ps-active">✅ Active</div>
+          <div class="card-tag tag-prog">Skill Dev.</div>
+          <h3>Pardhi Skill Development Yojana</h3>
+          <p>Free training in tailoring, plumbing, electronics & driving for youth aged 18–35. Chandrapur batch starting July 2026.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">120</div><div class="psi-label">Seats</div></div>
+            <div class="prog-stat-item"><div class="psi-num">48</div><div class="psi-label">Filled</div></div>
+          </div>
+          <button class="card-btn" onclick="showToast('✅ Application submitted!')">Apply Now →</button>
+        </div>
+        <div class="prog-card">
+          <div class="prog-status ps-active">✅ Active</div>
+          <div class="card-tag tag-prog">Housing</div>
+          <h3>PMAY-G – Pardhi Housing Campaign</h3>
+          <p>Free pucca house construction for homeless Pardhi families in rural Chandrapur under Pradhan Mantri Awas Yojana – Gramin.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">680</div><div class="psi-label">Sanctioned</div></div>
+            <div class="prog-stat-item"><div class="psi-num">420</div><div class="psi-label">Completed</div></div>
+          </div>
+          <button class="card-btn" onclick="showToast('✅ Application submitted!')">Apply Now →</button>
+        </div>
+        <div class="prog-card">
+          <div class="prog-status ps-review">🔄 Under Review</div>
+          <div class="card-tag tag-prog">Livelihood</div>
+          <h3>NT-DNT Livelihood Support Scheme</h3>
+          <p>Seed capital and micro-enterprise support for Pardhi families to start small businesses or farming. Apply through Chandrapur Zilla Parishad.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">₹50K</div><div class="psi-label">Max Grant</div></div>
+            <div class="prog-stat-item"><div class="psi-num">200+</div><div class="psi-label">Applied</div></div>
+          </div>
+          <button class="card-btn" onclick="showToast('✅ Application submitted!')">Apply Now →</button>
+        </div>
+        <div class="prog-card">
+          <div class="prog-status ps-active">✅ Active</div>
+          <div class="card-tag tag-prog">Health</div>
+          <h3>Mahatma Jyotiba Phule Jan Arogya Yojana</h3>
+          <p>Free healthcare for ST families. Mobile medical units for remote Pardhi wadis in Chandrapur district. Cashless treatment at govt hospitals.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">∞</div><div class="psi-label">Coverage</div></div>
+            <div class="prog-stat-item"><div class="psi-num">Free</div><div class="psi-label">Cost</div></div>
+          </div>
+          <button class="card-btn" onclick="showToast('✅ Enrolled!')">Enroll →</button>
+        </div>
+        <div class="prog-card">
+          <div class="prog-status ps-active">✅ Active</div>
+          <div class="card-tag tag-vote">Legal Rights</div>
+          <h3>SC/ST Atrocities Protection Act Support</h3>
+          <p>Free legal assistance for Pardhi families facing police harassment or caste-based discrimination. Contact our legal cell 24/7.</p>
+          <div class="prog-stat">
+            <div class="prog-stat-item"><div class="psi-num">24/7</div><div class="psi-label">Helpline</div></div>
+            <div class="prog-stat-item"><div class="psi-num">Free</div><div class="psi-label">Legal Aid</div></div>
+          </div>
+          <button class="card-btn" onclick="callHelpline()">📞 Report Violation</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ JOIN ============ -->
+    <div class="section" id="sec-join">
+      <div class="sec-head">
+        <div class="ico" style="background:rgba(82,183,136,0.2)">✅</div>
+        <div>
+          <h2 id="joinTitle">Join Pardhi Samaj Portal</h2>
+          <p id="joinSub">Register as an official member to vote, access meetings & all programs</p>
+        </div>
+      </div>
+      <div class="join-box">
+        <h2>🦅 <span id="joinFormTitle">Member Registration</span></h2>
+        <p class="join-sub" id="joinFormSub">Chandrapur District – Pardhi Samaj</p>
+        <div class="form-row">
+          <div class="form-field"><label id="lblFname">First Name</label><input type="text" id="j_fname" placeholder="e.g. Ramesh"/></div>
+          <div class="form-field"><label id="lblLname">Last Name</label><input type="text" id="j_lname" placeholder="e.g. Pardhi"/></div>
+        </div>
+        <div class="form-field">
+          <label id="lblPhone">Mobile Number (for OTP)</label>
+          <div class="phone-row">
+            <input class="country-code" value="+91" readonly/>
+            <input type="tel" id="j_phone" placeholder="9876543210" maxlength="10"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label id="lblDistrict">District</label>
+          <select id="j_district">
+            <option value="">Select District</option>
+            <option value="chandrapur" selected>Chandrapur (चंद्रपूर)</option>
+            <option value="nagpur">Nagpur (नागपूर)</option>
+            <option value="amravati">Amravati (अमरावती)</option>
+            <option value="yavatmal">Yavatmal (यवतमाळ)</option>
+            <option value="gadchiroli">Gadchiroli (गडचिरोली)</option>
+            <option value="wardha">Wardha (वर्धा)</option>
+            <option value="nashik">Nashik (नाशिक)</option>
+            <option value="pune">Pune (पुणे)</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label id="lblVillage">Village / Wadi</label><input type="text" id="j_village" placeholder="e.g. Pardhi Wadi"/></div>
+          <div class="form-field"><label id="lblAge">Age</label><input type="number" id="j_age" placeholder="e.g. 28" min="14" max="100"/></div>
+        </div>
+        <div class="form-field"><label id="lblCert">ST Certificate Number (optional)</label><input type="text" id="j_cert" placeholder="e.g. ST/2024/001234"/></div>
+        <div class="form-field"><label id="lblNotes">How can the samaj help you?</label><textarea id="j_notes" rows="3" placeholder="e.g. Help with scholarship application..."></textarea></div>
+        <button class="btn-primary" style="width:100%;margin-top:8px;" onclick="submitJoin()" id="btnRegister">🦅 Register as Samaj Member</button>
+        <p style="text-align:center;font-size:0.76rem;color:var(--muted);margin-top:14px;">By registering, you agree to the Pardhi Samaj community guidelines. Your data is kept private and secure.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">🦅</div>
+          <div class="footer-logo-text">Pardhi Samaj</div>
+        </div>
+        <p class="footer-desc">The official digital platform of Pardhi Samaj, Chandrapur District. Unity, Rights, and Progress for all Pardhi community members.</p>
+        <p class="footer-president">👤 President: Vishnu Dharne (विष्णू धार्णे)<br>📧 vishnudharne26@gmail.com</p>
+        <div style="display:flex;gap:10px;margin-top:10px;">
+          <button class="social-btn" onclick="openWhatsApp()" title="WhatsApp">💬</button>
+          <button class="social-btn" onclick="showToast('📘 Facebook page coming soon!')" title="Facebook">📘</button>
+          <button class="social-btn" onclick="showToast('📸 Instagram coming soon!')" title="Instagram">📸</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showSection('home')">🏠 Home</a>
+        <a onclick="showSection('notices')">📢 Notices</a>
+        <a onclick="showSection('vote')">🗳️ Voting</a>
+        <a onclick="showSection('meetings')">🤝 Meetings</a>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <a onclick="showSection('programs')">📋 Scholarships</a>
+        <a onclick="showSection('programs')">🏡 Housing</a>
+        <a onclick="showSection('programs')">💼 Livelihood</a>
+        <a onclick="showSection('programs')">⚖️ Legal Aid</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a onclick="openModal('loginModal')">🔐 Member Login</a>
+        <a onclick="showSection('join')">✅ Join Samaj</a>
+        <a onclick="callHelpline()">📞 Helpline</a>
+        <a onclick="openWhatsApp()">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Pardhi Samaj, Chandrapur District. All Rights Reserved.</p>
+      <p style="color:rgba(255,107,0,0.6);font-size:0.72rem;">एकता • हक्क • प्रगती</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <button class="wa-float" onclick="openWhatsApp()" title="Join WhatsApp Group">
+    💬
+    <span class="wa-tooltip">Join WhatsApp Group</span>
+  </button>
+</div>
+
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    <div id="loginStep1">
+      <div class="modal-logo">🦅</div>
+      <h2 id="loginTitle">Member Login</h2>
+      <p class="modal-sub" id="loginSub">Enter your registered mobile number to receive OTP</p>
+      <div class="form-field"><label id="loginPhoneLbl">Mobile Number</label>
+        <div class="phone-row"><input class="country-code" value="+91" readonly/><input type="tel" id="loginPhone" placeholder="9876543210" maxlength="10"/></div>
+      </div>
+      <div style="height:12px;"></div>
+      <button class="modal-btn" onclick="sendOTP()" id="sendOtpBtn">📱 Send OTP</button>
+      <p class="otp-note" id="otpNote1">OTP will be sent via SMS to your registered number</p>
+      <div style="height:14px;"></div>
+      <button class="modal-btn secondary" onclick="openPresLogin()">👑 President Login</button>
+    </div>
+    <div id="loginStep2" style="display:none;">
+      <div class="modal-logo">🔐</div>
+      <h2 id="otpTitle">Enter OTP</h2>
+      <p class="modal-sub" id="otpSub">6-digit code sent to your mobile</p>
+      <div class="form-field"><label id="otpLbl">OTP Code</label>
+        <div class="otp-input-row">
+          <input type="number" id="otpInput" placeholder="• • • • • •" maxlength="6"/>
+        </div>
+      </div>
+      <p class="otp-note" id="otpDemoNote">Demo: use OTP <strong>123456</strong></p>
+      <div style="height:12px;"></div>
+      <button class="modal-btn" onclick="verifyOTP()" id="verifyOtpBtn">✅ Verify & Login</button>
+      <button class="modal-btn secondary" style="margin-top:10px;" onclick="goBackLogin()" id="changeNumBtn">← Change Number</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRESIDENT LOGIN MODAL -->
+<div class="modal-overlay" id="presLoginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('presLoginModal')">✕</button>
+    <div class="modal-logo">👑</div>
+    <h2 id="presLoginTitle">President Login</h2>
+    <p class="modal-sub" id="presLoginSub">Enter admin password for President Dashboard</p>
+    <div class="form-field"><label id="presPassLbl">Admin Password</label><input type="password" id="presPassword" placeholder="••••••••"/></div>
+    <div style="height:12px;"></div>
+    <button class="modal-btn" onclick="verifyPres()" id="presLoginBtn">🔑 Login as President</button>
+    <p class="otp-note" id="presLoginNote">Only for President Vishnu Dharne · Demo: <strong>pardhi2026</strong></p>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successOverlay">
+  <div class="modal info-modal" style="text-align:center;">
+    <button class="modal-close" onclick="closeModal('successOverlay')">✕</button>
+    <div class="modal-icon" id="successIcon">🎉</div>
+    <h2 id="successTitle" style="font-family:'Yatra One',cursive;color:var(--gold);margin-bottom:10px;">Success!</h2>
+    <p id="successMsg" style="color:var(--muted);font-size:0.88rem;line-height:1.65;"></p>
+    <button class="modal-btn" style="margin-top:22px;" onclick="closeModal('successOverlay')">Done ✓</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
